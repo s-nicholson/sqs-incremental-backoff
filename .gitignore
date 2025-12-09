@@ -1,0 +1,101 @@
+###############################################
+# Java / Maven
+###############################################
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+!**/.mvn/wrapper/maven-wrapper.properties
+.mvn/timing.properties
+
+# Maven debug logs
+mvnw.cmd
+mvnw
+.mvn
+
+# Spring Boot
+spring.log
+*.log
+
+###############################################
+# IntelliJ IDEA
+###############################################
+.idea/
+*.iml
+*.iws
+out/
+
+###############################################
+# Eclipse
+###############################################
+.project
+.classpath
+.settings/
+bin/
+
+###############################################
+# VSCode
+###############################################
+.vscode/
+
+###############################################
+# AWS Lambda (Java build)
+###############################################
+# Lambda build artifacts (we package our own JARs)
+*.zip
+*.lambda.jar
+
+###############################################
+# Node / AWS CDK (TypeScript)
+###############################################
+cdk.out/
+node_modules/
+dist/
+build/
+
+# CDK context
+cdk.context.json
+cdk.context.cache.json
+
+# AWS temporary files
+*.aws.cdk-temp
+cdk-*.template.json
+asset.*.zip
+
+###############################################
+# OS-specific
+###############################################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+###############################################
+# Editor backup/swap files
+###############################################
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+*.rej
+
+###############################################
+# Logs and temp
+###############################################
+logs/
+*.log
+tmp/
+temp/
