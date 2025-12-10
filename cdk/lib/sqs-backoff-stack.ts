@@ -10,6 +10,8 @@ export class SqsBackoffStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
+    const maxReceiveCount = 5;
+
     const dlq = new Queue(this, 'DLQ', {
       queueName: 'backoff-dlq.fifo',
       fifo: true,
@@ -24,7 +26,7 @@ export class SqsBackoffStack extends Stack {
       contentBasedDeduplication: true,
       deadLetterQueue: {
         queue: dlq,
-        maxReceiveCount: 3
+        maxReceiveCount: maxReceiveCount
       }
     });
 
@@ -37,7 +39,8 @@ export class SqsBackoffStack extends Stack {
       memorySize: 512,
       timeout: Duration.minutes(5),
       environment: {
-        QUEUE_URL: queue.queueUrl
+        QUEUE_URL: queue.queueUrl,
+        MAX_RECEIVE: `${maxReceiveCount}`
       }
     });
 
